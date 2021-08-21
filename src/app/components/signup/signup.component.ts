@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { PlacementService } from '../providers/http-requests/placement.service';
-import { SignUpRequest } from '../placements.modle';
+import { PlacementService } from '../../providers/http-requests/placement.service';
+import { SignUpRequest } from '../../placements.modle';
 
 @Component({
   selector: 'app-signup',

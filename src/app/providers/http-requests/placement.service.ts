@@ -14,13 +14,13 @@ export class PlacementService {
   
   public signUp(signup : SignUpRequest): Observable<any> {
     let queryUrl = this.appConstantService.BASE_URL + this.appConstantService.SIGN_UP_URL;
-    const httpOptions = {
-      headers : new HttpHeaders({
-      "Access-Control-Allow-Origin" : '*'
-    }) 
-  }
-    return this.http.post<any>(queryUrl , signup, httpOptions)
+    return this.http.post<any>(queryUrl , signup);
   }
 
+  public signIn(signIn : SignInRequest): Observable<any>{
+    debugger
+    let queryUrl = this.appConstantService.BASE_URL + this.appConstantService.SIGN_IN_URL;
+    return this.http.post<any>(queryUrl , signIn);
+  }
 
 }

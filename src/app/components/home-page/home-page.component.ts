@@ -12,12 +12,15 @@ export class HomePageComponent implements OnInit,OnChanges {
 
   ngOnChanges(){
     console.log('onchanges');
-    
   }
-
   ngOnInit(): void {
     console.log('oninit');
-    
+  }
+  signin(){
+    this.route.navigate(['signin/']);
+  }
+  signup(){
+    this.route.navigate(['signup/']);
   }
 
 }
