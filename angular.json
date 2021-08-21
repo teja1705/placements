@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "placements"
+    }
+  },
+  "defaultProject": "placements",
+  "cli": {
+    "analytics": "397839a5-7abe-4608-b7a7-76638b898aa0"
+  }
 }
