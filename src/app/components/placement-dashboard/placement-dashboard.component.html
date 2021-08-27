@@ -152,9 +152,20 @@
 
 
 <div class="dashboard-container">
+  <div class="menu" [hidden] = "menu">
+    <nav>
+      <i class="fas fa-bars hamburger" (click)="displayMenu()"></i>
+      <ul>
+        <li><a href="#"></a>Profile</li>
+        <li><a href="#"></a>Feedback</li>
+        <li><a href="#"></a>Help</li>
+        <li><a href="#"></a>Settings</li>
+      </ul>
+    </nav>
+  </div>
     <div class="dashboard-navbar">
       <div class="nav-icons">
-        <i class="fas fa-bars"></i>
+        <i class="fas fa-bars" (click)="displayMenu()"></i>
         <span>AJET</span>
       </div>
       <div class="nav-addbutton">

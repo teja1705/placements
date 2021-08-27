@@ -16,6 +16,7 @@ export class PlacementDashboardComponent implements OnInit, DoCheck {
   editCompany : FormGroup 
   CompanyData : PlacementsData
   closeResult : string
+  menu : boolean = true
 
   
 
@@ -112,5 +113,9 @@ export class PlacementDashboardComponent implements OnInit, DoCheck {
     this.placementService.editCompany(this.CompanyData).subscribe(data=>{
       console.log(data);
     })
+  }
+
+  displayMenu(){
+    this.menu = !this.menu;
   }
 }
