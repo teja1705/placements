@@ -1,0 +1,198 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Add Company</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="addCompany">
+        <div class="form-group">
+          <label class="form-label">Company Name</label>
+          <input class="form-control" formControlName="companyName" type="text"  required>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label  class="form-label">Start Date</label>
+              <div class="input-group">
+                <input class="form-control" formControlName="startDate"  name="sd" ngbDatepicker #sd="ngbDatepicker">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary calendar" (click)="sd.toggle()" type="button"><i class="far fa-calendar"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label  class="form-label">End Date</label>
+              <div class="input-group">
+                <input class="form-control" formControlName="endDate" name="ed" ngbDatepicker #ed="ngbDatepicker">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary calendar" (click)="ed.toggle()" type="button"><i class="far fa-calendar"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label  class="form-label">Skills</label>
+          <input class="form-control" formControlName="companyDetails" type="text" >
+        </div>
+        <!-- <div class="form-group">
+          <label  class="form-label">Placement Type</label>
+          <input class="form-control" formControlName="placementType" type="text"  required>
+        </div> -->
+        <div class="input-group mb-3">
+          <label  class="form-label">Placement Type</label>
+          <select class="custom-select" id="inputGroupSelect01" formControlName="placementType" required>
+            <option value="FULLTIME">Full Time</option>
+            <option value="INTERNSHIP">Internship</option>
+            <option value="fulltime/internship">Full Time/Internship</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label  class="form-label">Salary Package</label>
+          <input class="form-control" formControlName="salaryPackage" type="text" >
+        </div>
+        <!-- <div class="form-group">
+          <label  class="form-label">Stage</label>
+          <input class="form-control" formControlName="stage" type="text"  required>
+        </div> -->
+        <div class="input-group mb-3">
+          <label  class="form-label">Stage</label>
+          <select class="custom-select" id="inputGroupSelect01" formControlName="stage" required>
+            <option value="NOTSTARTED">Not Started</option>
+            <option value="ONGOING">Ongoing</option>
+            <option value="ENDED">End</option>
+          </select>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-primary" (click)="addCompanyForm(addCompany)">Add</button>
+    </div>
+  </ng-template>
+
+  <ng-template #editcontent let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Edit Company</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="editCompany" >
+        <div class="form-group">
+          <label class="form-label">Company Name</label>
+          <input class="form-control" formControlName="companyName" type="text"  required>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label  class="form-label">Start Date</label>
+              <div class="input-group">
+                <input class="form-control" formControlName="startDate"  name="sd" ngbDatepicker #sd="ngbDatepicker">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary calendar" (click)="sd.toggle()" type="button"><i class="far fa-calendar"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label  class="form-label">End Date</label>
+              <div class="input-group">
+                <input class="form-control" formControlName="endDate" name="ed" ngbDatepicker #ed="ngbDatepicker">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary calendar" (click)="ed.toggle()" type="button"><i class="far fa-calendar"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label  class="form-label">Skills</label>
+          <input class="form-control" formControlName="companyDetails" type="text" >
+        </div>
+        <!-- <div class="form-group">
+          <label  class="form-label">Placement Type</label>
+          <input class="form-control" formControlName="placementType" type="text"  required>
+        </div> -->
+        <div class="input-group mb-3">
+          <label  class="form-label">Placement Type</label>
+          <select class="custom-select" id="inputGroupSelect01" formControlName="placementType" required>
+            <option value="FULLTIME">Full Time</option>
+            <option value="INTERNSHIP">Internship</option>
+            <option value="fulltime/internship">Full Time/Internship</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label  class="form-label">Salary Package</label>
+          <input class="form-control" formControlName="salaryPackage" type="text" >
+        </div>
+        <!-- <div class="form-group">
+          <label  class="form-label">Stage</label>
+          <input class="form-control" formControlName="stage" type="text"  required>
+        </div> -->
+        <div class="input-group mb-3">
+          <label  class="form-label">Stage</label>
+          <select class="custom-select" id="inputGroupSelect01" formControlName="stage" required>
+            <option value="NOTSTARTED">Not Started</option>
+            <option value="ONGOING">Ongoing</option>
+            <option value="ENDED">End</option>
+          </select>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="submitEditCompany(editCompany)">Edit</button>
+    </div>
+  </ng-template>
+
+
+<div class="dashboard-container">
+    <div class="dashboard-navbar">
+      <div class="nav-icons">
+        <i class="fas fa-bars"></i>
+        <span>AJET</span>
+      </div>
+      <div class="nav-addbutton">
+        <button class="btn btn-outline-primary mb-2 mr-2" (click)="openVerticallyCentered(content)">Add Company</button>
+      </div>
+    </div>
+    <div class="dashboard-body">
+        <div class="company-card">
+            <div class="card-data" *ngFor="let company of companies">
+              <!-- {{stage}} -->
+                <div class="card">
+                    <div class="card-header">
+                        {{company.companyName}}
+                        <div class="card-edit">
+                            <button (click)="editCompanyForm(company,editcontent)">
+                              <i class="fas fa-pen"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <span>Placement Type: {{company.placementType}}</span>
+                        <span>Salary: {{company.salaryPackage}}</span>
+                        <span>Stage: {{company.stage}}</span>
+                        <span *ngIf="company.companyDetails">Skills: {{company.companyDetails}}</span>
+                    </div>
+                    <div class="card-footer text-muted">
+                      <div class="start-date">
+                        {{company.startDate | date}}
+                      </div>
+                      <div class="end-date">
+                        {{company.endDate | date}}
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <div class="dashboard-footer">
+
+    </div>
+</div>

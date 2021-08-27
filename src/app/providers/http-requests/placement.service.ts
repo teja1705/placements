@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { SignInRequest, SignUpRequest} from '../../placements.modle';
 import { Observable } from 'rxjs';
 import { AppConstantsService } from '../constants/app-constants.service';
-import { FormGroup } from '@angular/forms';
+import { PlacementsData  } from '../../placements.modle';
 
 @Injectable({
   providedIn: 'root'
@@ -18,9 +18,42 @@ export class PlacementService {
   }
 
   public signIn(signIn : SignInRequest): Observable<any>{
-    debugger
     let queryUrl = this.appConstantService.BASE_URL + this.appConstantService.SIGN_IN_URL;
     return this.http.post<any>(queryUrl , signIn);
   }
+
+  public getPlacementData(): Observable<any>{
+    let queryUrl = this.appConstantService.BASE_URL + this.appConstantService.GET_COMPANIES;
+    let access_token = window.localStorage.getItem('access_token');
+    let httpOptions = {
+      headers : new HttpHeaders({
+        Authorization : 'Bearer ' + access_token
+      })
+    }
+    return this.http.get<any>(queryUrl, httpOptions)
+  }
+
+  public addCompany(company : PlacementsData):Observable<any>{
+    let queryUrl = this.appConstantService.BASE_URL + this.appConstantService.ADD_COMPANY;
+    let access_token = window.localStorage.getItem('access_token');
+    let httpOptions = {
+      headers : new HttpHeaders({
+        Authorization : 'Bearer ' + access_token
+      })
+    }
+    return this.http.post<any>(queryUrl, company, httpOptions)
+  }
+
+  public editCompany(company : PlacementsData):Observable<any>{
+    let queryUrl = this.appConstantService.BASE_URL + this.appConstantService.EDIT_COMPANY + '/' + company.id;
+    let access_token = window.localStorage.getItem('access_token');
+    let httpOptions = {
+      headers : new HttpHeaders({
+        Authorization : 'Bearer ' + access_token
+      })
+    }
+    return this.http.put<any>(queryUrl, company, httpOptions)
+  }
+ 
 
 }

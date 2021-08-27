@@ -11,8 +11,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppConstantsService } from './providers/constants/app-constants.service';
 import { PlacementService } from './providers/http-requests/placement.service';
-import { PlacementListComponent } from './components/placement-list/placement-list.component';
-
+import { PlacementDashboardComponent } from './components/placement-dashboard/placement-dashboard.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -20,18 +20,20 @@ import { PlacementListComponent } from './components/placement-list/placement-li
     HomePageComponent,
     SigninComponent,
     SignupComponent,
-    PlacementListComponent
+    PlacementDashboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [
     AppConstantsService,
-    PlacementService
+    PlacementService,
+    
   ],
   bootstrap: [AppComponent]
 })

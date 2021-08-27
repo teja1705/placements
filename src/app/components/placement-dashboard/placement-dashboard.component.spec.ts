@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PlacementListComponent } from './placement-list.component';
+import { PlacementDashboardComponent } from './placement-dashboard.component';
 
-describe('PlacementListComponent', () => {
-  let component: PlacementListComponent;
-  let fixture: ComponentFixture<PlacementListComponent>;
+describe('PlacementDashboardComponent', () => {
+  let component: PlacementDashboardComponent;
+  let fixture: ComponentFixture<PlacementDashboardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PlacementListComponent ]
+      declarations: [ PlacementDashboardComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PlacementListComponent);
+    fixture = TestBed.createComponent(PlacementDashboardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

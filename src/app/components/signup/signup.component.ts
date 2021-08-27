@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { PlacementService } from '../../providers/http-requests/placement.service';
 import { SignUpRequest } from '../../placements.modle';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -12,7 +13,7 @@ export class SignupComponent implements OnInit {
   signUpForm : FormGroup
   signUpRequest : SignUpRequest
 
-  constructor(public placementService : PlacementService) { }
+  constructor(public placementService : PlacementService,private route : Router) { }
 
   ngOnInit(): void {
     this.signUpForm = new FormGroup({
@@ -34,8 +35,8 @@ export class SignupComponent implements OnInit {
     this.signUpRequest.password = form.controls['password'].value;
     this.placementService.signUp(this.signUpRequest).subscribe(data=>{
       console.log(data);
-      
     })
+    this.route.navigate(['signin/'])
   }
 
 }

@@ -32,7 +32,6 @@ export class SigninComponent implements OnInit ,OnChanges, DoCheck{
   }
 
   onSubmit(form : FormGroup){
-    debugger
     this.signInRequest = new SignInRequest();
     this.signInRequest.username = form.controls['username'].value;
     this.signInRequest.password = form.controls['password'].value;
@@ -40,7 +39,8 @@ export class SigninComponent implements OnInit ,OnChanges, DoCheck{
     this.placementService.signIn(this.signInRequest).subscribe(data=>{
       if(data.id_token){
         this.access_token = data.id_token;
-        this.route.navigate(['placementlists/']);
+        window.localStorage.setItem('access_token', data.id_token);
+        this.route.navigate(['dashboard/']);
       }
       else{
         console.log(data);
