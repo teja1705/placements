@@ -173,7 +173,9 @@ nav{
     padding: 2rem;
     width: 300px;
     min-height: 100vh;
-    display: flex;
+    display: block;
+    transition: 0.3s;
+    font-family: "Open Sans",sans-serif;
     // transform: translateX(100%);
 }
 nav ul{
@@ -185,11 +187,11 @@ nav ul li{
     padding: 1rem 0;
     text-decoration: none;
     cursor: pointer;
+    &:hover{
+        font-size: 20px;
+    }
 }
 
-nav.active{
-    transform: translateX(0);
-}
 
 .menu{
     top: 0px;
@@ -198,12 +200,26 @@ nav.active{
     z-index: 2;
     position:fixed;
     display: flex;
+    overflow-x: hidden;
+    transition: 0.5s;
+    width: 0;
 }
 
-.hamburger{
-    top: 15px;
-    left: 34px;
-    position: fixed;
+.close-menu{
+    top: 5px;
+    right: 25px;
+    position:absolute;
     font-size: 1.2rem;
     cursor: pointer;
+    border: 0;
+    font-size: 1.6rem;
+    background-color: #fff;
+    span{
+        font-size: 2rem;
+    }
 }
+
+@media screen and (max-height: 450px) {
+    .menu {padding-top: 15px;}
+    .menu nav {font-size: 10px;}
+  }

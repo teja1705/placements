@@ -117,5 +117,11 @@ export class PlacementDashboardComponent implements OnInit, DoCheck {
 
   displayMenu(){
     this.menu = !this.menu;
+    if(this.menu){
+      document.getElementById("sideNav").style.width = "0px";
+    }
+    if(!this.menu){
+      document.getElementById("sideNav").style.width = "250px";
+    }
   }
 }

@@ -152,9 +152,12 @@
 
 
 <div class="dashboard-container">
-  <div class="menu" [hidden] = "menu">
+  <div class="menu" id="sideNav">
     <nav>
-      <i class="fas fa-bars hamburger" (click)="displayMenu()"></i>
+      <button type="button" class="close-menu" aria-label="Close" (click)="displayMenu()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <!-- <i class="fas fa-bars close-menu" (click)="displayMenu()"></i> -->
       <ul>
         <li><a href="#"></a>Profile</li>
         <li><a href="#"></a>Feedback</li>
