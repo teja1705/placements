@@ -3,6 +3,7 @@ import { PlacementsData, PlacementType, Stage } from 'src/app/placements.modle';
 import { PlacementService } from 'src/app/providers/http-requests/placement.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { CompanyService } from 'src/app/services/companylist.service';
 
 
 @Component({
@@ -11,16 +12,18 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./placement-dashboard.component.scss']
 })
 export class PlacementDashboardComponent implements OnInit, DoCheck {
-  companies : PlacementsData
+  // companies : PlacementsData
+  companies : any
   addCompany : FormGroup
   editCompany : FormGroup 
   CompanyData : PlacementsData
   closeResult : string
   menu : boolean = true
+  i : number
 
   
 
-  constructor(private placementService : PlacementService,private modalService: NgbModal) { }
+  constructor(private placementService : PlacementService,private modalService: NgbModal,private companyService : CompanyService) { }
 
   ngOnInit(){
     this.addCompany  = new FormGroup({
@@ -45,10 +48,13 @@ export class PlacementDashboardComponent implements OnInit, DoCheck {
       id : new FormControl('')
     })
 
-    this.placementService.getPlacementData().subscribe(data=>{
-      this.companies = data
-      console.log(this.companies);
-    })
+    // this.placementService.getPlacementData().subscribe(data=>{
+    //   this.companies = data
+    //   console.log(this.companies);
+    // })
+
+    this.companies = this.companyService.getCompanies();
+
   }
 
   openVerticallyCentered(content) {

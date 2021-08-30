@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 .homepage-container{
-    // background-color: #34495e!important;
+    background-color: #20232a;
     min-height: 100vh;
     justify-content:center;
     align-items: center;
@@ -15,16 +15,16 @@
 
 .homepage-header{
         font-family: "Open Sans", sans-serif;
-        width: 90%;
+        width: 100%;
         height: 60px;
-        background-color: #fff;
+        background-color: #20232a;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content:space-between;
-        color: #1e272e;
-        top: 10px;
-        border-radius: 10px;
+        color: #EEE;
+        top: 0px;
+        // border-radius: 10px;
         position: fixed;
         z-index: 2;
         font-weight: 700;
@@ -32,22 +32,32 @@
 }
 
 .page-icon{
-    justify-content: flex-start;
-    font-size: 30px;
+    // justify-content: flex-start;
+    font-size: 2.5rem;
     cursor: pointer;
-    margin-left: 10px;
+    // top: 10px;
+    color: #61dafb;
 }
+.logo{
+    margin-left: 100px;
+}
+
 .buttons{
     justify-content: flex-end;
-    margin: .5rem!important;
+    // margin: .5rem!important;
     padding: 5px;
+    margin-right: 50px;
 }
 
 button{
-    margin-right: 10px;
-    background-color: #1e272e;
+    // margin-right: 10px;
     color: #fff;
     border: 1px solid #1e272e;
+    background-color: #20232a;
+    &:hover{
+        background-color: #61dafb;
+        border: 1px solid #20232a;
+    }
 }
 
 img{
@@ -56,14 +66,55 @@ img{
 }
 
 span{
-    position:relative;
-    font-size: 32px;
+    // position:relative;
     font-weight: 700;
-    color: #1e272e;
+    color: #EEE;
     margin:auto;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 3px;
+    font-size: 4.2rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+@media screen and (max-width: 700px) {
+    span{
+        font-size: 3.8rem;
+    }
+    .logo{
+        margin-left: 50px;
+    }
+    .buttons{
+        margin-right: 30px;
+    }
+}
+@media screen and (max-width: 500px) {
+    span{
+        font-size: 2.8rem;
+    }
+    .logo{
+        margin-left: 30px;
+    }
+    .buttons{
+        margin-right: 20px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    span{
+        font-size: 1.8rem;
+    }
+    .logo{
+        margin-left: 20px;
+    }
+    .buttons{
+        margin-right: 5px;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .buttons{
+        display: none;
+    }
 }
 // small{
 //     position:relative;
