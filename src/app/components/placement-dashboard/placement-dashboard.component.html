@@ -169,12 +169,21 @@
   </div>
     <div class="dashboard-navbar">
       <div class="nav-icons logo">
-        <i class="fas fa-bars" (click)="displayMenu()"></i>
         <span>AJET</span>
       </div>
-      <div class="nav-addbutton">
-        <button class="btn btn-outline-primary mb-2 mr-2 add-company-style" (click)="openVerticallyCentered(content)">Add Company</button>
+      <div class="menu-list">
+        <ul>
+          <li><a href="#"></a>Profile</li>
+          <li><a href="#"></a>Feedback</li>
+          <li><a href="#"></a>Help</li>
+          <li><a href="#"></a>Settings</li>
+          <li (click)="openVerticallyCentered(content)">Add Company</li>
+        </ul>
       </div>
+      <i class="fas fa-bars" (click)="displayMenu()"></i>
+      <!-- <div class="nav-addbutton">
+        <button class="btn btn-outline-primary mb-2 mr-2 add-company-style" (click)="openVerticallyCentered(content)">Add Company</button>
+      </div> -->
     </div>
     <div class="dashboard-body">
         <div class="company-card">

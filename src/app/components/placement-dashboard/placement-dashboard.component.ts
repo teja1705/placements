@@ -19,7 +19,7 @@ export class PlacementDashboardComponent implements OnInit, DoCheck {
   CompanyData : PlacementsData
   closeResult : string
   menu : boolean = true
-  i : number
+  hideMenuBar : boolean = true
 
   
 
