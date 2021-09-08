@@ -1,0 +1,28 @@
+<div class="dashboard-container">
+    <div class="menu" id="sideNav">
+      <nav>
+        <button type="button" class="close-menu" aria-label="Close" (click)="displayMenu()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <ul>
+          <li (click)="companyRequests()">Requests</li>
+          <li><a href="#"></a>College Data</li>
+          <li><a href="#"></a>Help</li>
+          <li><a href="#"></a>Settings</li>
+        </ul>
+      </nav>
+    </div>
+      <div class="dashboard-navbar">
+        <div class="nav-icons logo">
+          <span>AJET</span>
+        </div>
+        <div class="menu-list">
+          <ul>
+            <li (click)="companyRequests()">Requests</li>
+            <li><a href="#"></a>College Data</li>
+            <li><a href="#"></a>Help</li>
+            <li><a href="#"></a>Settings</li>
+          </ul>
+        </div>
+        <i class="fas fa-bars" (click)="displayMenu()"></i>
+      </div>

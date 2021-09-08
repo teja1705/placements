@@ -1,0 +1,18 @@
+<div class="company-div">
+    <div class="accepted-companies" *ngFor="let company of companyData">
+        <div *ngIf="company.companyID == acceptedCompanyID">
+            <div class="company-data">
+                <span>{{company.companyName}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="company" *ngFor="let company of companyData">
+        <div class="company-data">
+            <span>{{company.companyName}}</span>
+            <span>{{company.comesUnder}}</span>
+        </div>
+        <div class="accept-btn">
+            <button (click)="accepted(company.companyID)">Accept</button>
+        </div>
+    </div>
+</div>

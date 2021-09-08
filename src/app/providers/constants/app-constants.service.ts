@@ -10,10 +10,14 @@ export class AppConstantsService {
   public GET_COMPANIES : string
   public ADD_COMPANY : string
   public EDIT_COMPANY : string
+  public GET_ALL_STUDENTS : string
+  public CONFIRM_REGISTRATION : string
   constructor() {
-    this.BASE_URL = 'http://192.168.43.197:9090',
-    this.SIGN_IN_URL = '/api/authenticate',
-    this.SIGN_UP_URL = '/api/register',
+    this.BASE_URL = 'http://localhost:8080/',
+    this.SIGN_IN_URL = 'api/login',
+    this.SIGN_UP_URL = 'api/registration',
+    this.CONFIRM_REGISTRATION = 'api/registration/confirm',
+    this.GET_ALL_STUDENTS = '/Students',
     this.GET_COMPANIES = '/api/companies',
     this.ADD_COMPANY = '/api/companies',
     this.EDIT_COMPANY = '/api/companies'

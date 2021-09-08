@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+.company-div{
+   display: flex;
+   flex-wrap: wrap;
+   margin: 30px;
+   justify-content: flex-end;
+}
+
+.company{
+    width: 75%;
+    justify-content: space-between;
+    border-radius: 8px;
+    display: flex;
+    border: 1px solid black;
+    padding: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.company-data{
+    font-family: "Open Sans",sans-serif;
+    justify-content: space-between;
+    display: flex;
+    width: 55%;
+    flex-wrap: wrap;
+}
+
+.accept-btn{
+    button{
+        padding: 6px 10px;
+        font-family: "Open Sans", sans-serif;
+        border-radius: 5px;
+        border: none;
+        background-color: #61dafb;
+        color: black;
+    }
+}
+
+.accepted-companies{
+    border-right: 1px solid black;
+}

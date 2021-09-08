@@ -19,9 +19,19 @@ export class PlacementService {
 
   public signIn(signIn : SignInRequest): Observable<any>{
     let queryUrl = this.appConstantService.BASE_URL + this.appConstantService.SIGN_IN_URL;
-    return this.http.post<any>(queryUrl , signIn);
+    let httpOptions = {
+      headers : new HttpHeaders({
+        access_token : window.localStorage.getItem('access_token')
+      })
+    }
+    return this.http.post<any>(queryUrl , signIn,httpOptions);
   }
 
+
+  public getStudents(): Observable<any>{
+    let queryUrl = this.appConstantService.BASE_URL + this.appConstantService.GET_ALL_STUDENTS;
+    return this.http.get<any>(queryUrl)
+  }
   public getPlacementData(): Observable<any>{
     let queryUrl = this.appConstantService.BASE_URL + this.appConstantService.GET_COMPANIES;
     let access_token = window.localStorage.getItem('access_token');

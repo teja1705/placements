@@ -55,8 +55,35 @@ export class CompanyService{
         },
     ]
 
+    companyRequests : any =[
+        {
+            companyID : 1,
+            companyName : 'Google',
+            comesUnder : 'Super Dream',
+            accepted:false,
+        },
+        {
+            companyID : 2,
+            companyName : 'Josh',
+            comesUnder : 'Super Dream',
+            accepted:false,
+        },
+        {
+            companyID : 3,
+            companyName : 'Bajaj Finserv',
+            comesUnder : 'Super Dream',
+            accepted:false,
+        },
+    ]
+
+
     getCompanies(){
         return this.companyList;
     }
+
+    getCompanyRequests(){
+        return this.companyRequests;
+    }
+
 
 }

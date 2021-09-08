@@ -1,16 +1,15 @@
 export class SignUpRequest {
     public firstName : string
     public lastName : string
-    public login : string
+    // public userName : string
     public email : string
     public password: string
-    public langKey : string = 'en'
 }
 
 export class SignInRequest {
-    username : string
+    id : any
+    email : string
     password : string
-    rememberMe : boolean
 }
 
 export class PlacementsData {
@@ -38,4 +37,32 @@ export enum Stage{
     REJECTEDBYME,
     NOOFFERRECEIVED,
     NOTSELECTED,
+}
+
+export class Student{
+    studentId : number
+    firstName : string
+    lastName : string
+    fatherName : string
+    fatherOccupation : string 
+    motherName : string
+    motherOccupation : string
+    dateofBirth : string
+    gender : string
+    collegeEmail : string
+    personalEmail : string
+    mobileNumber : number
+    password : string
+    cGPA : number
+    villageOrCity : string
+    state : string
+    country : string
+    nationality : string
+    pinCode : number
+    tenthMarks : number
+    twelthMarks : number
+    stream : string
+    branch : string
+    vITEE_Rank : number
+    institution : string
 }

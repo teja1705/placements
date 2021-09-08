@@ -19,7 +19,7 @@ export class SignupComponent implements OnInit {
     this.signUpForm = new FormGroup({
       firstName : new FormControl('', Validators.required),
       lastName: new FormControl('', Validators.required),
-      username : new FormControl('', Validators.required),
+      // username : new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
       password : new FormControl('', Validators.required),
       confirmPassword: new FormControl('', Validators.required),
@@ -30,13 +30,15 @@ export class SignupComponent implements OnInit {
     this.signUpRequest = new SignUpRequest();
     this.signUpRequest.firstName = form.controls['firstName'].value;
     this.signUpRequest.lastName = form.controls['lastName'].value;
-    this.signUpRequest.login = form.controls['username'].value;
+    // this.signUpRequest.userName = form.controls['username'].value;
     this.signUpRequest.email = form.controls['email'].value;
     this.signUpRequest.password = form.controls['password'].value;
     this.placementService.signUp(this.signUpRequest).subscribe(data=>{
       console.log(data);
+      window.localStorage.setItem('access_token',data.token);
+      window.localStorage.setItem('id',data.id);
+      this.route.navigate(['signin/'])
     })
-    this.route.navigate(['signin/'])
   }
 
 }

@@ -13,6 +13,9 @@ import { AppConstantsService } from './providers/constants/app-constants.service
 import { PlacementService } from './providers/http-requests/placement.service';
 import { PlacementDashboardComponent } from './components/placement-dashboard/placement-dashboard.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import { CompanyService } from './services/companylist.service';
+import { CompanyRequestsComponent } from './components/company-requests/company-requests.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HomePageComponent,
     SigninComponent,
     SignupComponent,
-    PlacementDashboardComponent
+    PlacementDashboardComponent,
+    AdminDashboardComponent,
+    CompanyRequestsComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +38,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   providers: [
     AppConstantsService,
     PlacementService,
-    
+    CompanyService,
   ],
   bootstrap: [AppComponent]
 })

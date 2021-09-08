@@ -3,21 +3,21 @@
     <form [formGroup]="signInForm" class="form-g" (ngSubmit)="onSubmit(signInForm)">
         <div class="form">
             <div class="form-group">
-                <label for="username" class="form-label">Username</label>
-                <input id="username" type="text" class="form-control is-valid" formControlName="username" required>
+                <label for="username" class="form-label">Email</label>
+                <input id="username" type="text" class="form-control is-valid" formControlName="email" required>
                 <div class="valid-feedback">
                     works
                 </div>
             </div>
             <div class="form-group">
                 <label for="password" class="form-label">Password</label>
-                <input id="password" type="password" class="form-control" formControlName="password" required>
+                <input id="password" type="password" class="form-control" formControlName="Password" required>
                 <div class="invalid-feedback">wrong password</div>
             </div>
-            <div class="form-check">
+            <!-- <div class="form-check">
                 <input id="checkbox" type="checkbox" formControlName="rememberMe" class="form-check-input">
                 <label for="checkbox" class="form-check-label">Remember Me</label>
-            </div>
+            </div> -->
             <button type="submit" [disabled]="signInForm.invalid">Sign In</button>
         </div>
         <!-- <div class="social-login ">
