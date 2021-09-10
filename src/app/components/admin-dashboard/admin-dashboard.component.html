@@ -6,23 +6,29 @@
         </button>
         <ul>
           <li (click)="companyRequests()">Requests</li>
-          <li><a href="#"></a>College Data</li>
+          <li><a href="#"></a>Students</li>
           <li><a href="#"></a>Help</li>
           <li><a href="#"></a>Settings</li>
         </ul>
       </nav>
     </div>
-      <div class="dashboard-navbar">
+    <div class="dashboard-navbar">
         <div class="nav-icons logo">
           <span>AJET</span>
         </div>
         <div class="menu-list">
           <ul>
             <li (click)="companyRequests()">Requests</li>
-            <li><a href="#"></a>College Data</li>
+            <li (click)="students()">Students</li>
             <li><a href="#"></a>Help</li>
             <li><a href="#"></a>Settings</li>
           </ul>
         </div>
         <i class="fas fa-bars" (click)="displayMenu()"></i>
+    </div>
+    <div class="dashboard-body">
+      <div class="statistic-card">
+        <img src="../../../assets/img/stats.png" alt="">
       </div>
+    </div>
+  </div>

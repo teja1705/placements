@@ -1,5 +1,9 @@
 <div class="signin-form">
-
+    <div class="error_message_style" [hidden]="dispaly_error_message">
+        <div class="error_text_style">
+            <span>{{error_message}}</span>
+        </div>
+    </div>
     <form [formGroup]="signInForm" class="form-g" (ngSubmit)="onSubmit(signInForm)">
         <div class="form">
             <div class="form-group">

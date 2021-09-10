@@ -16,6 +16,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { CompanyService } from './services/companylist.service';
 import { CompanyRequestsComponent } from './components/company-requests/company-requests.component';
+import { StudentsComponent } from './components/students/students.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CompanyRequestsComponent } from './components/company-requests/company-
     SignupComponent,
     PlacementDashboardComponent,
     AdminDashboardComponent,
-    CompanyRequestsComponent
+    CompanyRequestsComponent,
+    StudentsComponent
   ],
   imports: [
     BrowserModule,

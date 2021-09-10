@@ -12,6 +12,12 @@ export class SignInRequest {
     password : string
 }
 
+export class ErrorMessage{
+    status : any
+    error_message : String =''
+    errors : any
+}
+
 export class PlacementsData {
     id: number
     companyName : string

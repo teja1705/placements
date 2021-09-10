@@ -1,5 +1,7 @@
 .signin-form{
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
@@ -9,8 +11,31 @@
 
 }
 
+.error_message_style{
+    background-color: rgba(255,0,0, $alpha: 0.4);
+    // opacity: 0.4;
+    // border: 1px solid red;
+    padding: 10px;
+    margin:10px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 400px;
+}
+.error_text_style{
+    opacity: 1!important;
+    span{
+    font-family: "Open Sans",sans-serif;
+    font-size: 1rem;
+    // font-weight: 700;
+    color: black;
+    opacity: 0.9;
+    }
+}
 .form-g{
     width:400px;
+    height: 80%;
     background-color: #fff;
     padding: 30px;
     justify-content: center;
@@ -24,7 +49,6 @@
 
 .form{
     width: 100%;
-    height: auto;
     &-group{
         margin-bottom: 13px;
     }

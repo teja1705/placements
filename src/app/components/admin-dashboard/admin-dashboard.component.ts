@@ -25,7 +25,10 @@ export class AdminDashboardComponent implements OnInit {
   }
 
   companyRequests(){
-    this.route.navigate(['company-requests/']);
+    this.route.navigate(['admin-dashboard/company-requests/']);
+  }
+  students(){
+    this.route.navigate(['admin-dashboard/students/']);
   }
 
 }
