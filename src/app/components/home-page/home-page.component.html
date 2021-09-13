@@ -1,17 +1,123 @@
+<app-spinner [LoaderStatus]="loaderStatus"></app-spinner>
 <div class="homepage-container">
     <div class="homepage-header">
         <div class="logo">
-            <div class="page-icon">AJET</div>
-        </div>
-        <div class="buttons">
-            <button class="btn btn-warning"  (click)="signin()">Login</button>
-            <button class="btn btn-warning"  (click)="signup()">Sign-up</button>
+            <span style="color: blue;">placement</span><span style="color: orange;">buddy</span>
         </div>
     </div>
-    <div style="width: 100%;">
-        <!-- <img src="../../../assets/img/ajet.jpg" class="img-fluid" style="width:100%" alt="" srcset=""> -->
-        <span>WELCOME TO</span>
-        <span>AJET</span>
-        <!-- <small>-Teja</small> -->
+    <div class="header-border"></div>
+        <div id="response-message" [hidden]="dispaly_error_message">
+            <span>{{error_message}}</span>
+        </div>
+    <div style="width: 100%;margin-bottom: 200px;overflow: hidden;"> 
+        <div class="forms">
+            <div class="SignUpform" id="signup">
+                <span class="cltext">Create Account</span>
+                <div class="form">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-primary">Student</button>
+                        <button type="button" class="btn btn-primary">College</button>
+                        <button type="button" class="btn btn-primary">Company</button>
+                      </div>
+                      <form [formGroup]="signUpForm" class="form-g" (ngSubmit)="Register(signUpForm)">
+                      <div class="signin">
+                        <div class="form-group">
+                          <label class="form-label" for="firstName">First Name</label>
+                          <input class="form-control" id="firstName" type="text" formControlName="firstName" required>      
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="lastName">Last Name</label>
+                            <input class="form-control" id="lastName" type="text" formControlName="lastName">
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label" for="email">Email</label>
+                            <input class="form-control" id="email" type="email" formControlName="email" required>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label" for="password">Password</label>
+                            <input class="form-control" id="password" type="password" formControlName="password" required>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label" for="confirmPassword">Confirm Password</label>
+                            <input class="form-control" id="confirmPassword" type="password" formControlName="confirmPassword" required>
+                          </div>
+                          <div class="submit-btn">
+                            <button type="submit" class="btn btn-primary special-css-btn">Create Account</button>
+                        </div>
+                      </div>
+                    </form>
+                </div>
+            </div>
+            <div class="border">
+                <p style="background-color: white;">or</p>
+            </div>
+            <div class="SignInform" id="signin">
+                <span class="cltext">Login</span>
+                <div class="form">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" (click)="StudentSignInForm()" class="btn btn-primary">Student</button>
+                        <button type="button" (click)="CollegeSignInForm()" class="btn btn-primary">College</button>
+                        <button type="button" (click)="CompanySignInForm()" class="btn btn-primary">Company</button>
+                      </div>
+                      <form [formGroup]="signInForm" [hidden]="studentSignInForm" class="form-g" (ngSubmit)="Login(signInForm)">
+                      <div class="signin">
+                        <div class="form-group">
+                            <label for="username" class="form-label">Email</label>
+                            <input id="username" type="text" class="form-control" formControlName="email" required>
+                            <!-- <div class="valid-feedback">
+                                works
+                            </div> -->
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="form-label">Password</label>
+                            <input id="password" type="password" class="form-control" formControlName="Password" required>
+                            <div class="invalid-feedback">wrong password</div>
+                        </div>
+                        <div class="submit-btn">
+                            <button type="submit" class="btn btn-primary special-css-btn">Login</button>
+                        </div>
+                    </div>
+                </form>
+                <form [formGroup]="signInForm" [hidden]="collegeSignInForm" class="form-g" (ngSubmit)="Login(signInForm)">
+                    <div class="signin">
+                        <div class="form-group">
+                            <label for="username" class="form-label">PlacementBuddy Email</label>
+                            <input id="username" type="text" class="form-control" formControlName="email" required>
+                            <!-- <div class="valid-feedback">
+                                works
+                            </div> -->
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="form-label">Password</label>
+                            <input id="password" type="password" class="form-control" formControlName="Password" required>
+                            <div class="invalid-feedback">wrong password</div>
+                        </div>
+                        <div class="submit-btn">
+                            <button type="submit" class="btn btn-primary special-css-btn">Login</button>
+                        </div>
+                    </div>
+                </form>
+                <form [formGroup]="signInForm" [hidden]="companySignInForm" class="form-g" (ngSubmit)="Login(signInForm)">
+                    <div class="signin">
+                        <div class="form-group">
+                            <label for="username" class="form-label">PlacementBuddy Email</label>
+                            <input id="username" type="text" class="form-control" formControlName="email" required>
+                            <!-- <div class="valid-feedback">
+                                works
+                            </div> -->
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="form-label">Password</label>
+                            <input id="password" type="password" class="form-control" formControlName="Password" required>
+                            <div class="invalid-feedback">wrong password</div>
+                        </div>
+                        <div class="submit-btn">
+                            <button type="submit" class="btn btn-primary special-css-btn">Login</button>
+                        </div>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

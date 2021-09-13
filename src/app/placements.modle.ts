@@ -1,15 +1,16 @@
 export class SignUpRequest {
     public firstName : string
     public lastName : string
-    // public userName : string
     public email : string
     public password: string
+    public appUserRole : string
 }
 
 export class SignInRequest {
     id : any
     email : string
     password : string
+    appUserRole : string
 }
 
 export class ErrorMessage{

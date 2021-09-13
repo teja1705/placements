@@ -19,12 +19,12 @@ export class PlacementService {
 
   public signIn(signIn : SignInRequest): Observable<any>{
     let queryUrl = this.appConstantService.BASE_URL + this.appConstantService.SIGN_IN_URL;
-    let httpOptions = {
-      headers : new HttpHeaders({
-        access_token : window.localStorage.getItem('access_token')
-      })
-    }
-    return this.http.post<any>(queryUrl , signIn,httpOptions);
+    // let httpOptions = {
+      // headers : new HttpHeaders({
+      //   access_token : window.localStorage.getItem('access_token')
+      // })
+    // }
+    return this.http.post<any>(queryUrl , signIn);
   }
 
 

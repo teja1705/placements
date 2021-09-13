@@ -1,127 +1,338 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
+
 *{
     box-sizing: border-box;
 }
 .homepage-container{
-    background-color: #20232a;
-    min-height: 100vh;
+    font-family: "Open Sans", sans-serif;
     justify-content:center;
     align-items: center;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     margin: 0;
+    position: relative;
 }
 
 .homepage-header{
         font-family: "Open Sans", sans-serif;
         width: 100%;
-        height: 60px;
-        background-color: #20232a;
+        height: auto;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        justify-content:space-between;
+        justify-content:center;
         color: #EEE;
-        top: 0px;
-        // border-radius: 10px;
-        position: fixed;
-        z-index: 2;
+        top: 0 !important;
         font-weight: 700;
-
+        margin-bottom: 1rem;
 }
 
-.page-icon{
-    // justify-content: flex-start;
-    font-size: 2.5rem;
-    cursor: pointer;
-    // top: 10px;
-    color: #61dafb;
+.header-border{
+    width: 80%;
+    height: 4px;
+    background-color: orange;
+    background-image: linear-gradient(to right, blue , orange);
 }
+
 .logo{
-    margin-left: 100px;
+    font-size: 3rem;
+    margin: 0.5rem 0;
+    justify-content: center;
 }
 
-.buttons{
-    justify-content: flex-end;
-    // margin: .5rem!important;
-    padding: 5px;
-    margin-right: 50px;
-}
-
-button{
-    // margin-right: 10px;
-    color: #fff;
-    border: 1px solid #1e272e;
-    background-color: #20232a;
-    &:hover{
-        background-color: #61dafb;
-        border: 1px solid #20232a;
+.signin{
+    .form-group{
+        margin: 15px;
+    }
+    .form-check{
+        margin-bottom: 15px;
+    }
+    .form-label{
+        font-weight: 600;
     }
 }
 
-img{
-    top: 0px;
-    position:absolute;
+.submit-btn{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    
 }
 
-span{
-    // position:relative;
-    font-weight: 700;
-    color: #EEE;
+.special-css-btn{
+    background-color: #fa8a29;
+    background-image: linear-gradient(315deg, #fc9842 0%, #037ade 74%);
+}
+
+.special-css-btn:hover{
+    transition: 1s;
+    background-color: #037ade;
+    background-image: linear-gradient(315deg, #037ade 0%, #fa8a29 74%);
+}
+
+.btn{
+    width: 94%;
+    color: #fff;
+    border: 0;
+    border-radius: 3px;
+    padding: 7px;
+}
+.span{
+    font-weight: 500;
+    color: black;
     margin:auto;
-    font-size: 4.2rem;
+    font-size: 4rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.error-message{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba($color: red, $alpha: 0.4);
+    margin: 10px;
+   
+}
+
+.success-message{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba($color:green, $alpha: 0.4);
+    margin: 10px;
+    
+}
+
+.forms{
+    width: 100%;
+    justify-content:center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    height: 700px;
+    overflow: hidden;
+}
+.SignUpform{
+    width: 49%;
+    height:100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+}
+.btn-group{
+    width: 100%;
+}
+.SignInform{
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.form{
+    height: 80%;
+    background-color:white;
+    box-shadow: 1px 2px 5px 2px rgba($color:#141414, $alpha: 0.4);
+    top: 10px !important;
+}
+
+.form:hover{
+    box-shadow: 2px 8px 12px 2px rgba(0,0,0,0.4);
+}
+
+.btn:hover{
+    background-color: orange;
+}
+
+
+.border{
+    height: 75%;
+    width: 3px;
+    background-color: rgba($color: #000000, $alpha: 0.3);
     justify-content: center;
     align-items: center;
     display: flex;
 }
 
+.cltext{
+    font-size: 3rem;
+    margin: 10px;
+}
+
 @media screen and (max-width: 700px) {
-    span{
+    .span{
         font-size: 3.8rem;
-    }
-    .logo{
-        margin-left: 50px;
     }
     .buttons{
         margin-right: 30px;
     }
-}
-@media screen and (max-width: 500px) {
-    span{
-        font-size: 2.8rem;
+    .cltext{
+        font-size: 1.7rem;
     }
-    .logo{
-        margin-left: 30px;
+    .forms{
+        height: 650px !important;
+    }
+    .form{
+        width: 65% !important;
+    }
+}
+@media screen and (max-width: 550px) {
+    .span{
+        font-size: 2.8rem;
     }
     .buttons{
         margin-right: 20px;
     }
+    .cltext{
+        font-size: 1.4rem;
+    }
+    .form{
+        width: 75% !important;
+    }
 }
 
-@media screen and (max-width: 400px) {
-    span{
+@media screen and (max-width: 500px) {
+    .span{
         font-size: 1.8rem;
-    }
-    .logo{
-        margin-left: 20px;
     }
     .buttons{
         margin-right: 5px;
     }
+    .cltext{
+        font-size: 1.2rem;
+    }
+    .form{
+        width: 85% !important;
+    }
 }
 
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 321px) {
     .buttons{
         display: none;
     }
+    .span{
+        font-size: 1.5rem;
+    }
+    .logo{
+        font-size: 1.3rem;
+    }
+    .form{
+        width: 96% !important;
+    }
 }
-// small{
-//     position:relative;
-//     font-size: 32px;
-//     font-weight: 700;
-//     color: #1e272e;
-//     margin:auto;
-    
 
-// }
+@media screen and (max-width: 240px) {
+    .buttons{
+        display: none;
+    }
+    .span{
+        font-size: 1.4rem;
+    }
+    .logo{
+        font-size: 1.2rem;
+    }
+    .form{
+        width: 100% !important;
+    }
+}
+
+@media screen and (max-width: 2000px){
+    .toggle{
+        display:none;
+    }
+    .SignUpform{
+        width: 49%;
+        display: flex;
+    }
+    .SignInform{
+        display:flex;
+        width: 49%;
+    }
+    .homepage-header{
+        justify-content:center;
+    }
+    .form{
+        width: 65%;
+    }
+}
+
+@media screen and (max-width: 1100px){
+    .form{
+        width: 80%;
+    }
+    .cltext{
+        font-size: 2.5rem;
+    }
+    .toggle{
+        display:none;
+    }
+    .SignUpform{
+        width: 49%;
+        display: flex;
+    }
+    .SignInform{
+        display:flex;
+        width: 49%;
+    }
+    .homepage-header{
+        justify-content:center;
+    }
+}
+@media screen and (max-width: 900px){
+    .border{
+        display: none;
+    }
+    .cltext{
+        font-size: 2rem;
+    }
+    .toggle{
+        display:none;
+    }
+    .SignUpform{
+        width: 49%;
+        display: flex;
+    }
+    .SignInform{
+        display:flex;
+        width: 49%;
+    }
+    .homepage-header{
+        justify-content:center;
+    }
+    .form{
+        width: 85%;
+    }
+}
+@media screen and (max-width:850px){
+    .SignInform{
+        display: none;
+    }
+    .toggle{
+        display:flex;
+    }
+    .SignUpform{
+        width: 100%;
+    }
+    .form{
+        width: 60%;
+        height: 550px;
+    }
+    .logo{
+        font-size: 2rem;
+    }
+}
